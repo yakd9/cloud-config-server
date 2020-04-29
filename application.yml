@@ -1,0 +1,21 @@
+eureka:
+  instance:
+    hostname: localhost
+    port: 8761
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
+  
+ microservice:
+  customer-service:
+    endpoints:
+      endpoint:
+        uri: http://CUSTOMER-SERVICE/api/customer
+  order-service:
+    endpoints:
+      endpoint:
+        uri: http://ORDER-SERVICE/order/ordersByCustId    
+    
+
